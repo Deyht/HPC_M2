@@ -24,7 +24,7 @@ program main
 		write (*,*) "There is actually", nb_threads, "running"
 	end if
 
-	!$OMP DO
+	!$OMP DO SCHEDULE(DYNAMIC,2)
 	do i = 1+rad, v_size-rad
 		do j = 1+rad, v_size-rad
 			do k = 1+rad,v_size-rad
