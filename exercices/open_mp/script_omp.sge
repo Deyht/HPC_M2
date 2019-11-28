@@ -1,0 +1,11 @@
+#!/bin/bash
+#$ -q formation.q    ## on demande la file formation.q
+#$ -N tp_myname      ## le nom de votre job  
+#$ -pe openmp 4          ## on demande 4 coeurs 
+#$ -l h_vmem=4G           ## on demande 4G/coeur
+#$ -o results.out  ## le nom de fichier output/err
+
+ 
+## on lance l'application
+export OMP_NUM_THREADS=4
+time ./monProgramme
